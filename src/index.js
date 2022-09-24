@@ -42,8 +42,8 @@ fetchCountries(countryName)
             return `<li class="country-list__item">
             <img src="${flags.svg}" alt="" width="50" height="50">
             <h2 class="country-list__title>"${name.official}"</h2>
-            </li>`
-       })
+            </li>`}).join('');
+   
        refs.countryList.innerHTML = list;
       }
 
