@@ -1,6 +1,6 @@
 import './css/styles.css';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
-import fetchCountries from './fetchCountries';
+import {fetchCountries} from './fetchCountries';
 import debounce from "lodash.debounce";
 
 const refs = {
@@ -24,9 +24,9 @@ function onSearch(e) {
 
       console.log(countryName);
 
-fetchCountries(countryName)
-.then(renderCountries)
-.catch(onError)
+      fetchCountries(countryName)
+     .then(renderCountries)
+     .catch(onError)
    }
 
    function renderCountries(countries) {
@@ -40,8 +40,8 @@ fetchCountries(countryName)
        if (countries.length > 2 && countries.length < 10)  {
          const list = countries.map(({flags, name}) => {
             return `<li class="country-list__item">
-            <img src="${flags.svg}" alt="" width="50" height="50">
-            <h2 class="country-list__title>"${name.official}"</h2>
+            <img src="${flags.svg}" alt="" width="40" height="40">
+            <h2 class="country-list__title">${name.official}</h2>
             </li>`}).join('');
    
        refs.countryList.innerHTML = list;
@@ -49,14 +49,14 @@ fetchCountries(countryName)
 
       if (countries.length === 1) {
          const markup = countries.map(({flags, name, capital, population, languages }) =>{
-         return `<div>
-             <img src="${flags.svg}" alt="${name.official}" width="70" height="50">
-            <h2>${name.official}</h2>
-            <p>Capital: ${capital}</p>
-            <p>Population: ${population}</p>
-           <p>Languages: ${Object.values(languages)}</Object></p>
-            </div>`}).join("");
-            refs.countryInfo.innerHTML = markup;
+         return `<img class = "image" src="${flags.svg}" alt="${name.official}" width="30" height="30">
+                 <h2 class = "official">${name.official}</h2>
+                 <div class = "discription">
+                 <p><span>Capital:</span> ${capital}</p>
+                 <p><span>Population:</span> ${population}</p>
+                 <p><span>Languages:</span> ${Object.values(languages)}</Object></p>
+                 </div>`}).join("");
+         refs.countryInfo.innerHTML = markup;
         }}
 
 function onError () {
