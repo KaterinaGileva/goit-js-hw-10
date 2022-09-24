@@ -40,7 +40,7 @@ function onSearch(e) {
        if (countries.length > 2 && countries.length < 10)  {
          const list = countries.map(({flags, name}) => {
             return `<li class="country-list__item">
-            <img src="${flags.svg}" alt="" width="40" height="40">
+            <img class = "image" src="${flags.svg}" alt="" width="40" height="40">
             <h2 class="country-list__title">${name.official}</h2>
             </li>`}).join('');
    
@@ -49,7 +49,7 @@ function onSearch(e) {
 
       if (countries.length === 1) {
          const markup = countries.map(({flags, name, capital, population, languages }) =>{
-         return `<img class = "image" src="${flags.svg}" alt="${name.official}" width="30" height="30">
+         return `<img  src="${flags.svg}" alt="${name.official}" width="30" height="30">
                  <h2 class = "official">${name.official}</h2>
                  <div class = "discription">
                  <p><span>Capital:</span> ${capital}</p>

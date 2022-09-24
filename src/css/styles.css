@@ -31,24 +31,31 @@ body {
     background-color: #ffd700;
     border-color: #0057b8;
 }
-.country-list__title {
+
+.country-list__item {
+  list-style: none;
+  padding: 0px;
   
-  align-items: center;
+}
+
+.country-list__title {
+  display: inline;
   margin-left: 20px;
   padding: 0px;
- 
+  
+}
+
+.image {
+  padding: 0px;
+  display: inline;
 }
 
 .country-info {
   margin-left: 40px;
   font-size: 25px;
 }
-.country-list__item {
-  list-style: none;
-  display: flex;
 
-}
-.official{
+.official {
   display: inline;
   font-size: 40px;
   padding: 0px;
@@ -62,7 +69,6 @@ span {
   margin-bottom: 15px;
   margin-top: 0px;
 }
-
 
 .discription {
   margin-top: 30px;
